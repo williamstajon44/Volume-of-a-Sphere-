@@ -1,0 +1,53 @@
+public class MethodPractice
+{
+    static double sphereVolume(double r)
+    {   if (r < 0) return 0.0;
+    
+        return 4.0 / 3.0 * Math.PI * Math.pow(r, 3);
+    }
+    
+    // Total volume of a number of identical spheres
+    
+    static double totalSphereVolume(double r, int count)
+    {
+        if (count < 0) return 0.0;
+        
+        return count * sphereVolume(r);
+    }
+    
+    // Sum up all values in an array of double
+    
+    static double sumArray(double [ ] a)
+    {
+        double sum = 0.0;
+        
+        for (int h = 0; h < a.length; h++)
+        {
+            sum = sum + a[h];
+            
+        }
+        return sum;
+    }
+
+    public static void main(String[] args)
+    { 
+        double vol;
+        double radius;
+        
+        radius = 5.6;
+        
+//        vol = sphereVolume(radius);
+//        
+//        System.out.println("Volume: " + vol);    
+        
+        double totalVolume = totalSphereVolume(radius, -5);
+        
+        System.out.println("Total volume of all spheres is " + totalVolume);
+        
+        double [ ] x = {5.6, -1.2, 7.8, 10.9, -12.01};
+        
+        double sumOfX = sumArray(x);
+        
+        System.out.println("Sum of array is " + sumOfX);
+    }   
+}
